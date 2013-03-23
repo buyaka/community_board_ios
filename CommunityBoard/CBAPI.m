@@ -13,7 +13,7 @@
 
 + (NSString *)authenticationPath {
     //*** Replace this with the code to the OAuth authentication path
-    return @"oauth/token";
+    return @"/oauth/token";
 }
 
 + (NSString*)communitiesPath {

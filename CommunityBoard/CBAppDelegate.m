@@ -128,8 +128,28 @@ static NSString * const secret = @"";
 }
 
 - (RKManagedObjectStore*)managedObjectStore {
-//*** Add the code to setup an RKManagedObjectStore
-  return nil;
+    //*** Add the code to setup an RKManagedObjectStore
+    if (_managedObjectStore) {
+        return _managedObjectStore;
+    }
+    
+    _managedObjectStore = [[RKManagedObjectStore alloc]
+                           initWithManagedObjectModel:self.managedObjectModel];
+    [_managedObjectStore createPersistentStoreCoordinator];
+    
+    NSString *storePath = [RKApplicationDataDirectory() stringByAppendingPathComponent:@"CommunityBoard.sqlite"];
+    NSError *error = nil;
+    NSPersistentStore *persistentStore = [_managedObjectStore
+                                          addSQLitePersistentStoreAtPath:storePath
+                                          fromSeedDatabaseAtPath:nil
+                                          withConfiguration:nil
+                                          options:nil
+                                          error:&error];
+    NSAssert(persistentStore, @"Failed to add persistent store with error: %@", error);
+    
+    [_managedObjectStore createManagedObjectContexts];
+    
+    return _managedObjectStore;
 }
 
 @end
