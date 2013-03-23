@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		43705E8416FD9247001BB8C8 /* CBUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 43705E8316FD9247001BB8C8 /* CBUser.m */; };
+		43705E8716FD9247001BB8C8 /* CBCommunity.m in Sources */ = {isa = PBXBuildFile; fileRef = 43705E8616FD9247001BB8C8 /* CBCommunity.m */; };
+		43705E8A16FD9247001BB8C8 /* CBPost.m in Sources */ = {isa = PBXBuildFile; fileRef = 43705E8916FD9247001BB8C8 /* CBPost.m */; };
 		4B5AA41D8D4E47A197DDEC6F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C5EA5474D5041C79E517171 /* libPods.a */; };
 		F420CA7316E324CA008878A6 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F420CA7216E324CA008878A6 /* QuartzCore.framework */; };
 		F44DB45F16F745EC00443121 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F44DB45E16F745EC00443121 /* SystemConfiguration.framework */; };
@@ -36,6 +39,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		43705E8216FD9247001BB8C8 /* CBUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBUser.h; sourceTree = "<group>"; };
+		43705E8316FD9247001BB8C8 /* CBUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBUser.m; sourceTree = "<group>"; };
+		43705E8516FD9247001BB8C8 /* CBCommunity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBCommunity.h; sourceTree = "<group>"; };
+		43705E8616FD9247001BB8C8 /* CBCommunity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBCommunity.m; sourceTree = "<group>"; };
+		43705E8816FD9247001BB8C8 /* CBPost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBPost.h; sourceTree = "<group>"; };
+		43705E8916FD9247001BB8C8 /* CBPost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBPost.m; sourceTree = "<group>"; };
 		9C5EA5474D5041C79E517171 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE86F31D8B7447589944036B /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		F420CA7216E324CA008878A6 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -167,6 +176,12 @@
 			isa = PBXGroup;
 			children = (
 				F48417E016D9CE8B00074EAE /* CommunityBoard.xcdatamodeld */,
+				43705E8816FD9247001BB8C8 /* CBPost.h */,
+				43705E8916FD9247001BB8C8 /* CBPost.m */,
+				43705E8516FD9247001BB8C8 /* CBCommunity.h */,
+				43705E8616FD9247001BB8C8 /* CBCommunity.m */,
+				43705E8216FD9247001BB8C8 /* CBUser.h */,
+				43705E8316FD9247001BB8C8 /* CBUser.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -283,6 +298,9 @@
 				F498491D16F5BF4C000736A6 /* CBPostViewController.m in Sources */,
 				F44DB46216F746F600443121 /* CBObjectManager.m in Sources */,
 				F46FC7A516F957B400C802C5 /* CBAPI.m in Sources */,
+				43705E8416FD9247001BB8C8 /* CBUser.m in Sources */,
+				43705E8716FD9247001BB8C8 /* CBCommunity.m in Sources */,
+				43705E8A16FD9247001BB8C8 /* CBPost.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

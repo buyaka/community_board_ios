@@ -22,7 +22,7 @@ NSString * const CBFontName = @"HelveticaNeue-Light";
 const CGFloat CBFontLargeSize = 17.0f;
 const CGFloat CBFontSmallSize = 13.0f;
 
-static NSString * const baseURLString = @"";
+static NSString * const baseURLString = @"https://community-board.herokuapp.com/api/v1/";
 static NSString * const applicationID = @"";
 static NSString * const secret = @"";
 
