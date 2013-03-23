@@ -12,23 +12,23 @@
 @implementation CBAPI
 
 + (NSString *)authenticationPath {
-//*** Replace this with the code to the OAuth authentication path
-  return nil;
+    //*** Replace this with the code to the OAuth authentication path
+    return @"oauth/token";
 }
 
 + (NSString*)communitiesPath {
-//*** Replace this with the code to load the communities list
-  return nil;
+    //*** Replace this with the code to load the communities list
+    return @"communities.json";
 }
 
 + (NSString*)postPathWithCommunity:(CBCommunity *)community {
-//*** Replace this with the code to load the posts list for a given community
-  return nil;
+    //*** Replace this with the code to load the posts list for a given community
+    return RKPathFromPatternWithObject([self postsPathPattern], community);
 }
 
 + (NSString*)postsPathPattern {
-//*** Replace this with the path pattern to load posts
-  return nil;
+    //*** Replace this with the path pattern to load posts
+    return @"communities/:communityId/posts.json";
 }
 
 

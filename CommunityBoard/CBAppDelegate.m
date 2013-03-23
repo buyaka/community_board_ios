@@ -42,8 +42,26 @@ static NSString * const secret = @"";
 
   UIViewController *rootViewController = nil;
   
-//***Create the AFOAuth2Client and CBObjectManager here.
+    //***Create the AFOAuth2Client and CBObjectManager here.
+    //Added step 1
+    NSURL *baseURL = [NSURL URLWithString:baseURLString];
+    AFOAuth2Client *oauthClient = [AFOAuth2Client clientWithBaseURL:baseURL clientID:applicationID secret:secret];
+    [oauthClient setParameterEncoding:AFJSONParameterEncoding];
 
+    CBObjectManager *objectManager = [[CBObjectManager alloc] initWithHTTPClient:oauthClient];
+    objectManager.managedObjectStore = self.managedObjectStore;
+    [objectManager setup];
+
+    AFOAuthCredential *credential = [AFOAuthCredential retrieveCredentialWithIdentifier:CBCredentialIdentifier];
+
+    if (!credential) {
+        rootViewController = [[CBLoginViewController alloc] initWithNibName:nil bundle:nil];
+    } else {
+        [oauthClient setAuthorizationHeaderWithCredential:credential];
+        rootViewController = [[CBCommunityViewController alloc] initWithManagedObjectContext:self.managedObjectStore.mainQueueManagedObjectContext];
+    }
+    //end
+    
   self.navigationController = [[UINavigationController alloc]
     initWithRootViewController:rootViewController];
   self.window.rootViewController = self.navigationController;
