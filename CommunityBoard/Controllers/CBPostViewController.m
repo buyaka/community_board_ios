@@ -129,7 +129,32 @@
 
 #pragma mark - Private Methods
 - (void)loadPosts {
-//*** Load the posts from the network here.
+    //*** Load the posts from the network here.
+    CBPostViewController *__weak weakSelf = self;
+    
+    [[CBObjectManager sharedManager]
+     getObjectsAtPath:[CBAPI postPathWithCommunity:self.community]
+     parameters:nil
+     success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+         CBPostViewController *strongSelf = weakSelf;
+         NSError *error = nil;
+         
+         if (strongSelf == nil) {
+             return;
+         }
+         
+         strongSelf.posts = [mappingResult.dictionary objectForKey:@"posts"];
+         [strongSelf.tableView reloadData];
+         
+         strongSelf.community.posts = [NSSet setWithArray:strongSelf.posts];
+         [strongSelf.managedObjectContext saveToPersistentStore:&error];
+         
+         if (error) {
+             NSLog(@"Error saving posts: %@", error.localizedDescription);
+         }
+     } failure:^(RKObjectRequestOperation *operation, NSError *error) {
+         NSLog(@"Error loading posts: %@", error.localizedDescription);
+     }];
 }
 
 @end

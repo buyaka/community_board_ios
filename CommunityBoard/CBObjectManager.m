@@ -8,6 +8,7 @@
 
 #import "CBObjectManager.h"
 #import "CBAPI.h"
+#import "CBPost.h"
 
 @implementation CBObjectManager
 

@@ -22,9 +22,9 @@ NSString * const CBFontName = @"HelveticaNeue-Light";
 const CGFloat CBFontLargeSize = 17.0f;
 const CGFloat CBFontSmallSize = 13.0f;
 
-static NSString * const baseURLString = @"https://community-board.herokuapp.com/api/v1/";
-static NSString * const applicationID = @"";
-static NSString * const secret = @"";
+static NSString * const baseURLString = @"https://safe-gorge-4781.herokuapp.com/api/v1/";
+static NSString * const applicationID = @"dab72f094ec919a069cde2052b1f2dbbaab8cd241ed143adda5f9b57dde8692b";
+static NSString * const secret = @"3ff9fd26377f4b238ae4c1aa8caa026eee30edcba2b6282dac2683bbd7e8121c";
 
 @interface CBAppDelegate ()
 
